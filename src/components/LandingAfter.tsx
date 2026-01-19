@@ -8,7 +8,7 @@ export default function LandingAfter(){
                     <li>Services</li>
                     <li>About</li>
                     <li>Contact</li>
-                    <a href="/auth/logout" className="border-1 px-2 rounded-md hover:scale-108 transition-all duration-300">Logout</a>
+                    
                 </ul>
             </nav>
             <h1 className="flex-1 flex items-center justify-center">Welcome To My Google Auth Practice project</h1>

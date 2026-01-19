@@ -5,9 +5,12 @@ import { getUserId } from '@/lib/auth';
 // PATCH /api/tasks/[id] - Update a task
 export async function PATCH(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
+        // Next.js 15+ requires awaiting params
+        const { id } = await params;
+
         // Step 1: Get the current user's ID
         const userId = await getUserId();
 
@@ -27,7 +30,7 @@ export async function PATCH(
         // the user can only update their own tasks
         const result = await prisma.task.updateMany({
             where: {
-                id: params.id,
+                id,
                 userId // This ensures user owns the task
             },
             data: body
@@ -43,7 +46,7 @@ export async function PATCH(
 
         // Step 6: Fetch and return the updated task
         const task = await prisma.task.findUnique({
-            where: { id: params.id }
+            where: { id }
         });
 
         return NextResponse.json({
@@ -63,9 +66,12 @@ export async function PATCH(
 // DELETE /api/tasks/[id] - Delete a task
 export async function DELETE(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
+        // Next.js 15+ requires awaiting params
+        const { id } = await params;
+
         // Step 1: Get the current user's ID
         const userId = await getUserId();
 
@@ -82,7 +88,7 @@ export async function DELETE(
         // the user can only delete their own tasks
         const result = await prisma.task.deleteMany({
             where: {
-                id: params.id,
+                id,
                 userId // This ensures user owns the task
             }
         });
