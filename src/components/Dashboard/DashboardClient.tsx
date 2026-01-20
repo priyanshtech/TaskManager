@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import DashboardHeader from '@/components/DashboardHeader';
-import TaskCalendar from '@/components/TaskCalendar';
-import TaskSection from '@/components/tasks/TaskSection';
-import TaskStatistics from '@/components/TaskStatistics';
-import TaskForm from '@/components/tasks/AddTask';
+import DashboardHeader from '@/components/Dashboard/DashboardHeader';
+import TaskCalendar from '@/components/Dashboard/Calender/TaskCalendar';
+import TaskSection from '@/components/Dashboard/tasks/TaskSection';
+import TaskStatistics from '@/components/Dashboard/Statistics/TaskStatistics';
+import TaskForm from '@/components/Dashboard/tasks/AddTask';
 
 type Task = {
     id: string;
