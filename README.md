@@ -2,6 +2,10 @@
 
 A modern, personalized daily task manager built with Next.js, featuring Google authentication and a beautiful calendar interface.
 
+### Landing Page
+![MiniCal Landing Page](public/screenshots/Screenshot%202026-01-21%20at%207.08.43%20PM.png)
+
+
 ## ✨ Features
 
 - **🔐 Secure Authentication** - Google OAuth integration via Auth0
