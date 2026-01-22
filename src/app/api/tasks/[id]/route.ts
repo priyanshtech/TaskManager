@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { auth0 } from "@/lib/auth0";
+import { getUserId } from "@/lib/auth";
 
 // PATCH /api/tasks/[id]
 export async function PATCH(
@@ -11,9 +11,11 @@ export async function PATCH(
         // Next.js 15+ requires awaiting params
         const { id } = await params;
 
-        const session = await auth0.getSession();
+        // Get the current user's ID
+        const userId = await getUserId();
 
-        if (!session?.user) {
+        // Check authentication
+        if (!userId) {
             return NextResponse.json(
                 { error: "Unauthorized" },
                 { status: 401 }
@@ -25,7 +27,7 @@ export async function PATCH(
         const result = await prisma.task.updateMany({
             where: {
                 id,
-                userId: session.user.sub,
+                userId,
             },
             data: body,
         });
@@ -60,9 +62,11 @@ export async function DELETE(
         // Next.js 15+ requires awaiting params
         const { id } = await params;
 
-        const session = await auth0.getSession();
+        // Get the current user's ID
+        const userId = await getUserId();
 
-        if (!session?.user) {
+        // Check authentication
+        if (!userId) {
             return NextResponse.json(
                 { error: "Unauthorized" },
                 { status: 401 }
@@ -72,7 +76,7 @@ export async function DELETE(
         const result = await prisma.task.deleteMany({
             where: {
                 id,
-                userId: session.user.sub,
+                userId,
             },
         });
 
