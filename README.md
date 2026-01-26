@@ -3,7 +3,8 @@
 A modern, personalized daily task manager built with Next.js, featuring Google authentication and a beautiful calendar interface.
 
 ### Landing Page
-![Uploading Screenshot 2026-01-26 at 9.01.37 PM.png…]()
+<img width="1468" height="919" alt="Screenshot 2026-01-26 at 9 01 37 PM" src="https://github.com/user-attachments/assets/04fa6f40-188d-4381-a886-fb6d19aa361e" />
+
 
 
 
