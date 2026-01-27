@@ -15,6 +15,18 @@ export default function DashboardClient({ user }) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    //fetch tasks
+    //filter tasks
+    //handle date selection
+    // 2 use effect (fetch tasks, filter tasks)
+    // handle date selection
+    //handle task toggle
+    //handle task deletion
+    //handle task creation
+
+
+
+
     // Fetch tasks from API
     const fetchTasks = async () => {
         try {
