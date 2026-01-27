@@ -18,7 +18,7 @@ export default function LandingBefore() {
     return (
         <div className="min-h-screen overflow-x-hidden relative">
             {/* Grid Background */}
-            <div className="absolute inset-0 -z-10 h-full w-full bg-white [background-image:linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] [background-size:40px_40px]"></div>
+            <div className="absolute inset-0 -z-10 h-full w-full bg-white [background-image:linear-gradient(to_right,#f3f4f6_1px,transparent_1px),linear-gradient(to_bottom,#f3f4f6_1px,transparent_1px)] [background-size:40px_40px]"></div>
 
             {/* Navbar */}
             <nav className={`fixed top-0 left-0 right-0 h-16 backdrop-blur-md z-50 transition-all duration-300 ${scrolled ? ' shadow-lg shadow-blue-500/10' : ''
@@ -52,7 +52,7 @@ export default function LandingBefore() {
 
                 <div className="relative z-10 text-center max-w-5xl mx-auto space-y-8">
                     {/* Badge */}
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 shadow-lg text-sm font-medium ">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 shadow-lg text-sm font-medium bg-white">
                         <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-lg"></span>
                         Your productivity companion
                     </div>

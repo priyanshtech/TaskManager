@@ -10,7 +10,7 @@ export default function RootLayout({
     children,
 }) {
     return (
-        <html lang="en" className="light">
+        <html lang="en" className="light scroll-smooth scroll-pt-16">
             <body>
                 <Auth0Provider>
                     {children}
